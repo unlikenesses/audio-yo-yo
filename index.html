@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>audio yo yo</title>
+	<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="header">
+		<div class="controls">
+			<a href="#" id="addTrack">Add Track</a>
+		</div>
+	</div>
+	<div class="canvas">
+		
+	</div>
+	<script id="trackTemplate" type="text/template">
+		<div class="trackContainer">
+		    <div class="track">
+		    	<div class="ball"></div>
+			    <div class="trackControls">
+			    	<a href="#" class="toggleStart">Start</a>
+			    </div>
+			    <select name="startNote" class="startNote" id="">
+			    	<option value="220">A</option>
+			    	<option value="246.94">B</option>
+			    	<option value="261.63">C</option>
+			    	<option value="293.66">D</option>
+			    	<option value="329.63">E</option>
+			    	<option value="349.23">F</option>
+			    	<option value="392">G</option>
+			    </select>
+			    <select name="endNote" class="endNote" id="">
+			    	<option value="220">A</option>
+			    	<option value="246.94">B</option>
+			    	<option value="261.63">C</option>
+			    	<option value="293.66">D</option>
+			    	<option value="329.63">E</option>
+			    	<option value="349.23">F</option>
+			    	<option value="392">G</option>
+			    </select>
+		    </div>
+	    </div>
+	</script>
+	<script src="js/lib/jquery-1.11.3.min.js"></script>
+	<script src="js/lib/underscore.js"></script>
+	<script src="js/lib/backbone.js"></script>
+	<script src="js/models/track.js"></script>
+    <script src="js/collections/tracks.js"></script>
+    <script src="js/views/track.js"></script>
+    <script src="js/views/tracks.js"></script>
+    <script src="js/views/controls.js"></script>
+    <script src="js/app.js"></script>
+    <script>$(function(){app.boot();})</script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+*,
+*::before,
+*::after {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	height: 100%;   
+    font-family: 'Montserrat', sans-serif;
+}
+
+.header {
+	padding: 10px;
+	height: 70px;
+	background: white;
+}
+
+.header a {
+	color: #333;
+	text-decoration: none;
+}
+
+.canvas {
+	width: 100%;
+	height: 100%;
+	background: #9a9a9a;
+	position: relative;
+}
+
+/* TRACK */
+
+.trackContainer {
+	width: 40px;
+	min-height: 200px;
+	float: left;
+	margin: 10px 70px 0 0;
+	position: relative;
+}
+
+.track {
+	width: 100%;
+	height: 180px;
+	border-right: 2px solid #232323;
+	padding-right: 40px;
+}
+
+.track .ball {
+	width: 19px;
+	height: 19px;
+	border-radius: 100%;
+	background: yellow;
+	position: absolute;
+	left: 32px;
+	top: 1px;
+}
+
+.trackControls {
+	position: absolute;
+	top: 200px;
+	left: 20px;
+}
+
+.trackControls a {
+	color: white;
+	text-decoration: none;
+}
+
+.startNote {
+	position: absolute;
+	top: 0;
+	left: 59px;
+}
+.endNote {
+	position: absolute;
+	bottom: 5px;
+	left: 59px;
+}
