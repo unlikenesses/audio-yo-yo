@@ -6,6 +6,7 @@ app.TracksView = Backbone.View.extend({
 
 	initialize: function() {
 		this.collection = new app.Tracks();
+		this.addTrack();
 		app._vent.on('controls:addTrack', this.addTrack, this);
 	},
 
