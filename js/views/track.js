@@ -19,7 +19,8 @@ app.TrackView = Backbone.View.extend({
 	},
 
 	events: {
-		'click a' : 'toggleStart',
+		'click a.toggleStart' : 'toggleStart',
+		'click a.toggleMute' : 'toggleMute',
 		'change .startNote' : 'changeStartNote',
 		'change .endNote' : 'changeEndNote'
 	},
@@ -38,7 +39,20 @@ app.TrackView = Backbone.View.extend({
 		} else {
 			btnState.html('Start');
 		}
-		this.model.toggleStart();	
+		this.model.toggleStart();
+	},
+
+	toggleMute: function(e) {
+
+		e.preventDefault();
+		var btnState = $(this.$el).find('a.toggleMute');
+		if (btnState.html() == 'Mute') {
+			btnState.html('Unmute');
+		} else {
+			btnState.html('Mute');
+		}
+		this.model.toggleMute();
+
 	},
 
 	changeStartNote: function(e) {

@@ -20,7 +20,8 @@ app.Track = Backbone.Model.extend({
 		height: 180,
 		direction: 1,
 		startNote: 220,
-		endNote: 220
+		endNote: 220,
+		muted: false
 	},
 
 	create: function(freq) {
@@ -37,7 +38,7 @@ app.Track = Backbone.Model.extend({
 
 		var direction = this.get('direction');
 		var newPos = this.get('ballPos') + 1 * this.get('direction');
-		if (newPos <= 0) { 
+		if (newPos <= 0) {
 			this.set('direction', direction * -1);
 			this.sound('startNote');
 		}
@@ -52,10 +53,12 @@ app.Track = Backbone.Model.extend({
 
 	sound: function(pos) {
 
-		this.create(this.get(pos));
-		var currentTime = app.audioCx.currentTime;
-		this.node.start(currentTime);
-		this.node.stop(currentTime + 0.5);
+		if (! this.get('muted')) {
+			this.create(this.get(pos));
+			var currentTime = app.audioCx.currentTime;
+			this.node.start(currentTime);
+			this.node.stop(currentTime + 0.5);
+		}
 
 	},
 
@@ -86,6 +89,13 @@ app.Track = Backbone.Model.extend({
 			this.start();
 		}
 		this.set('playing', ! playing);
+
+	},
+
+	toggleMute: function() {
+
+		var muted = this.get('muted');
+		this.set('muted', ! muted);
 
 	}
 
